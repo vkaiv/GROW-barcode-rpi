@@ -7,12 +7,12 @@ int scanner;
 char data;
 
 int INIT_SCANNER[][2] = {
-    {0x00, 0x82}, // continous reading on and light normally off
-    {0x05, 0x05}, // 0.5 second read interval
-    {0x13, 0x94}, // 2 second same barcode read interval
-    {0x2C, 0x02}, // read all types of barcodes
-    {0x2E, 0x01}, // enable reading EAN13, because the above doesn't do it
-    {0x60, 0x21}, // add newline after the scanned value
+    {MODEADDR, 0x82}, // continous reading on and light normally off
+    {INTERVALADDR, 0x05}, // 0.5 second read interval
+    {S_INTERVALADDR, 0x94}, // 2 second same barcode read interval
+    {BARCODETYPESADDR, 0x02}, // read all types of barcodes
+    {EAN13ADDR, 0x01}, // enable reading EAN13, because the above doesn't do it
+    {OUTPUTFORMATADDR, 0x21}, // add newline after the scanned value
 };
 
 int main() {
@@ -60,6 +60,15 @@ void reset_scanner() {
         serialPutchar(scanner, reset[i]);
     } 
 
+}
+
+void save_settings() {
+    int save[] = {0x7E, 0x00, 0x09, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00};
+    calculate_crc(save + 2);
+
+    for (int i = 0; i < 9; i++) {
+        serialPutchar(scanner, save[i]);
+    } 
 }
 
 // CRC16-CCITT/KERMIT
