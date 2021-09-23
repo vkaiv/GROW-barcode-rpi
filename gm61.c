@@ -7,12 +7,12 @@ int scanner;
 char data;
 
 int INIT_SCANNER[][2] = {
-    {MODEADDR, 0x82}, // continous reading on and light normally off
-    {INTERVALADDR, 0x05}, // 0.5 second read interval
-    {S_INTERVALADDR, 0x94}, // 2 second same barcode read interval
-    {BARCODETYPESADDR, 0x02}, // read all types of barcodes
-    {EAN13ADDR, 0x01}, // enable reading EAN13, because the above doesn't do it
-    {OUTPUTFORMATADDR, 0x21}, // add newline after the scanned value
+    {MODE_ADDR, 0x82}, // continous reading on and light normally off
+    {INTERVAL_ADDR, 0x05}, // 0.5 second read interval
+    {S_INTERVAL_ADDR, 0x94}, // 2 second same barcode read interval
+    {BARCODETYPES_ADDR, 0x02}, // read all types of barcodes
+    {EAN13_ADDR, 0x01}, // enable reading EAN13, because the above doesn't do it
+    {OUTPUTFORMAT_ADDR, 0x21}, // add newline after the scanned value
 };
 
 int main() {
