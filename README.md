@@ -3,7 +3,7 @@
 Small program that shows how to interface Grow GM61 UART barcode reader with Raspberry Pi
 
 ## Description
-Does probably work with other Grow barcode readers too.
+Should probably work with other Grow barcode readers as well.
 
 ## Getting Started
 
