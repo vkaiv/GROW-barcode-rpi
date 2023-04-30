@@ -1,4 +1,4 @@
-# GROW GM61
+# GROW-barcode-rpi
 
 Small program that shows how to interface Grow GM61 UART barcode reader with Raspberry Pi
 
