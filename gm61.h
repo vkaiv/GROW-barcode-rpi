@@ -1,9 +1,9 @@
 void send_command(int address, int command);
 void calculate_crc(int data[]);
 void reset_scanner();
-void save_settings()
+void save_settings();
 
-                                    // addresses for setting the following parameters
+// addresses for setting the following parameters
 #define MODE_ADDR            0x00    // continous/induction mode
 #define INTERVAL_ADDR        0x05    // read interval
 #define S_INTERVAL_ADDR      0x13    // interval between reading the same barcode
